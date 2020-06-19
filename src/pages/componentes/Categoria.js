@@ -9,6 +9,6 @@ export default class Categoria extends Component {
         <p>{name}</p>
         <Produto />
       </div>
-    )
+    );
   }
 }

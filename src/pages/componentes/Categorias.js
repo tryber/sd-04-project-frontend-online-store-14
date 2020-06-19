@@ -5,24 +5,20 @@ import * as api from '../../services/api';
 export default class Categorias extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      categorias: [],
-    }
+    this.state = { categorias: [] };
   }
 
   componentDidMount() {
-    api.getCategories().then(categorias => this.setState({
-      categorias,
-    }));
+    api.getCategories().then((categorias) => this.setState({ categorias }));
   }
 
   render() {
-    const { categorias } = this .state;
+    const { categorias } = this.state;
     return (
       <div>
-        {categorias.map(categoria => (
+        {categorias.map((categoria) =>
           <Categoria key={categoria.id} name={categoria.name} />
-        ))}
+        )}
       </div>
     )
   }
