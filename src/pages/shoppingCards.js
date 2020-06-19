@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Carrinho from '../carrinho.png';
+
 
 class ShoppingCart extends Component {
   render() {
