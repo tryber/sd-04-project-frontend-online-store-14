@@ -8,7 +8,7 @@ export default class Home extends Component {
       <h1 data-testid="home-initial-message">
         Digite algum termo de pesquisa ou escolha uma categoria.
         <Link to="cads">
-          <img src={Carrinho} data-testid="shopping-cart-button" />
+          <img src={Carrinho} data-testid="shopping-cart-button" alt="Carrinho" />
         </Link>
       </h1>
     );
