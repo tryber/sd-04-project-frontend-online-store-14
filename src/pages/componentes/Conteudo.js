@@ -7,6 +7,6 @@ export default class Conteudo extends Component {
       <div>
         <Categorias />
       </div>
-    )
+    );
   }
 }
