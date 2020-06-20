@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Produto from './Produto';
 
 export default class Categoria extends Component {
   render() {
@@ -7,7 +6,6 @@ export default class Categoria extends Component {
     return (
       <div data-testid="category">
         <p>{name}</p>
-        <Produto />
       </div>
     );
   }
