@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Categorias from './Categorias';
+import * as api from '../../services/api';
 
 export default class Conteudo extends Component {
   constructor(props) {
@@ -8,22 +9,24 @@ export default class Conteudo extends Component {
       termo: '',
       itens: [],
     }
-    this.obterItens = this.obterItens.bind(this);
   }
 
   obterItens(termo) {
-    fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${termo}`)
-      .then((response) =>  itens.json())
+    api.getProductsFromCategoryAndQuery(undefined, termo)
+      .then((itens) => this.setState({itens: itens.results}));
   }
 
   render() {
     const { termo } = this.state;
     return (
-      <div>
-        <input type="text" data-testid="input" value={termo}
+      <div style={{border: '1px solid black', borderRadius: '5px'}}>
+        <input type="text" data-testid="query-input" value={termo}
           onChange={(e) => this.setState({ termo: e.target.value })}
         />
-        <button type="button" onClick={() => this.obterItens(termo)}>Buscar</button>
+        <button type="button"  data-testid="query-button"
+          onClick={() => this.obterItens(termo)}>
+          Buscar
+        </button>
         <Categorias />
       </div>
     );
