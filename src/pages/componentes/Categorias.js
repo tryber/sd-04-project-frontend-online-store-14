@@ -17,7 +17,7 @@ export default class Categorias extends Component {
     return (
       <div>
         {categorias.map((categoria) =>
-          (<Categoria key={categoria.id} name={categoria.name} />)
+          <Categoria key={categoria.id} name={categoria.name} />,
         )}
       </div>
     );
