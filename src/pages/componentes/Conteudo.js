@@ -9,7 +9,7 @@ export default class Conteudo extends Component {
     this.state = {
       termo: '',
       itens: [],
-    }
+    };
   }
 
   obterItens(termo) {
@@ -21,11 +21,14 @@ export default class Conteudo extends Component {
     const { termo, itens } = this.state;
     return (
       <div style={{ border: '1px solid black', borderRadius: '5px' }}>
-        <input type="text" data-testid="query-input" value={termo}
+        <input
+          type="text" data-testid="query-input" value={termo}
           onChange={(e) => this.setState({ termo: e.target.value })}
         />
-        <button type="button" data-testid="query-button"
-          onClick={() => this.obterItens(termo)}>
+        <button
+          type="button" data-testid="query-button"
+          onClick={() => this.obterItens(termo)}
+        >
           Buscar
         </button>
         <Produtos itens={itens} />

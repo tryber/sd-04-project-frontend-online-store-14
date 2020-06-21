@@ -6,9 +6,12 @@ export default class Produtos extends Component {
     const { itens } = this.props;
     return (
       <div style={{ border: '1px solid black', borderRadius: '5px' }}>
-        {itens.map((item) => <Produto key={item.id} titulo={item.title}
-          foto={item.thumbnail} preco={`R$ ${item.price}`}
-        />)}
+        {itens.map((item) =>
+          <Produto
+            key={item.id} titulo={item.title}
+            foto={item.thumbnail} preco={`R$ ${item.price}`}
+          />
+        )}
       </div>
     );
   }
