@@ -1,4 +1,10 @@
 import React, { Component } from 'react';
+import Categorias from './Categorias';
+
+export default class Conteudo extends Component {
+  render() {
+    return (
+      <div>
 import Produtos from './Produtos';
 import Categorias from './Categorias';
 import * as api from '../../services/api';
@@ -31,6 +37,18 @@ export default class Conteudo extends Component {
 
   render() {
     const { categoria, termo, itens } = this.state;
+      termo: '',
+      itens: [],
+    };
+  }
+
+  obterItens(termo) {
+    api.getProductsFromCategoryAndQuery(undefined, termo)
+      .then((itens) => this.setState({ itens: itens.results }));
+  }
+
+  render() {
+    const { termo, itens } = this.state;
     return (
       <div style={{ border: '1px solid black', borderRadius: '5px' }}>
         <input
@@ -40,11 +58,13 @@ export default class Conteudo extends Component {
         <button
           type="button" data-testid="query-button"
           onClick={() => this.obterItens(categoria, termo)}
+          onClick={() => this.obterItens(termo)}
         >
           Buscar
         </button>
         <Produtos itens={itens} />
         <Categorias onclick={this.incluirCategoria} />
+        <Categorias />
       </div>
     );
   }

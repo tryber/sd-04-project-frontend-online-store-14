@@ -12,6 +12,10 @@ export default class Categoria extends Component {
           />
           {name}
         </label>
+    const { name } = this.props;
+    return (
+      <div data-testid="category">
+        <p>{name}</p>
       </div>
     );
   }
