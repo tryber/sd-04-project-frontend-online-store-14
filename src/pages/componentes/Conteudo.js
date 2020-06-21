@@ -13,6 +13,30 @@ export default class Conteudo extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      categoria: '',
+      termo: '',
+      itens: [],
+    };
+    this.incluirCategoria = this.incluirCategoria.bind(this);
+  }
+
+  obterItens(categoria, termo) {
+    api.getProductsFromCategoryAndQuery(categoria, termo)
+      .then((itens) => this.setState({ itens: itens.results }));
+  }
+
+  incluirCategoria(e) {
+    const { categoria, termo } = this.state;
+    if (e.target.checked) {
+      this.setState({ categoria: e.target.id });
+      this.obterItens(categoria, termo);
+    } else {
+      this.setState({ categoria: '' });
+    }
+  }
+
+  render() {
+    const { categoria, termo, itens } = this.state;
       termo: '',
       itens: [],
     };
@@ -33,11 +57,13 @@ export default class Conteudo extends Component {
         />
         <button
           type="button" data-testid="query-button"
+          onClick={() => this.obterItens(categoria, termo)}
           onClick={() => this.obterItens(termo)}
         >
           Buscar
         </button>
         <Produtos itens={itens} />
+        <Categorias onclick={this.incluirCategoria} />
         <Categorias />
       </div>
     );
