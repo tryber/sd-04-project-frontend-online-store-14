@@ -15,7 +15,7 @@ export default class Categorias extends Component {
   render() {
     const { categorias } = this.state;
     return (
-      <div style={{border: '1px solid black', borderRadius: '5px'}}>
+      <div style={{ border: '1px solid black', borderRadius: '5px' }}>
         {categorias.map((categoria) =>
           <Categoria key={categoria.id} name={categoria.name} />,
         )}
