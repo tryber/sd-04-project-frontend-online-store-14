@@ -5,7 +5,7 @@ export default class Categoria extends Component {
     const { name, id, onclick } = this.props;
     return (
       <div>
-        <label>
+        <label htmlFor={id}>
           <input
             type="checkbox" data-testid="category" id={id}
             onClick={onclick}

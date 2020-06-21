@@ -24,8 +24,7 @@ export default class Conteudo extends Component {
     if (e.target.checked) {
       this.setState({ categoria: e.target.id });
       this.obterItens(categoria, termo);
-    }
-    else {
+    } else {
       this.setState({ categoria: '' });
     }
   }
