@@ -15,4 +15,3 @@ describe('Criar página do carrinho de compras', () => {
     expect(screen.getByTestId('shopping-cart-empty-message')).toHaveTextContent('Seu carrinho está vazio')
   });
 });
-
