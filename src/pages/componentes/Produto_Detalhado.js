@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-export default class Produto_detalhado extends Component {
+export default class Produto_Detalhado extends Component {
   render() {
     const { titulo, foto, preco } = this.props.location.state.props;
     return (
