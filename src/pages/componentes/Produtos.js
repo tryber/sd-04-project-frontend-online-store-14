@@ -10,7 +10,7 @@ export default class Produtos extends Component {
           <Produto
             key={item.id} titulo={item.title}
             foto={item.thumbnail} preco={`R$ ${item.price}`}
-          />
+          />,
         )}
       </div>
     );
