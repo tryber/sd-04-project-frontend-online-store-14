@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import React, { Component } from 'react';
+import Conteudo from './componentes/Conteudo';
 
 import Carrinho from '../carrinho.png';
 import Conteudo from './componentes/Conteudo';

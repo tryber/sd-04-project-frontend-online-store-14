@@ -1,4 +1,10 @@
 import React, { Component } from 'react';
+import Categorias from './Categorias';
+
+export default class Conteudo extends Component {
+  render() {
+    return (
+      <div>
 import Produtos from './Produtos';
 import Categorias from './Categorias';
 import * as api from '../../services/api';
