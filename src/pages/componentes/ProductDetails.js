@@ -4,6 +4,7 @@ import { MdKeyboardReturn } from 'react-icons/md';
 import { FiShoppingCart } from 'react-icons/fi';
 
 export class ProductDetail extends React.Component {
+  render() {
     const { location: { state: { price, thumbnail, title, id } } } = this.props;
     const { location: { state: { product } } } = this.props;
     return (
