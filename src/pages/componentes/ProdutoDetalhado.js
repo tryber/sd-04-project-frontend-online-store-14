@@ -9,6 +9,13 @@ export default class ProdutoDetalhado extends Component {
         <p data-testid="product-detail-name">{titulo}</p>
         <img src={foto} alt="Produto detalhado" />
         <p>{preco}</p>
+        <form>
+          <label htmlFor="oi" id="oi">
+            Avaliação
+          </label>
+          <br />
+          <textarea data-testid="product-detail-evaluation" rows="5" cols="40" />
+        </form>
       </div>
     );
   }
