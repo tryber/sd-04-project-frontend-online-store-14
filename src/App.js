@@ -3,7 +3,6 @@ import React from 'react';
 import './App.css';
 import Home from './pages/home';
 import ProdutoDetalhado from './pages/componentes/ProdutoDetalhado';
-import ShoppingCart from './pages/shoppingCards';
 
 function App() {
   return (
@@ -11,7 +10,6 @@ function App() {
       <Switch>
         <Route path="/produto_detalhado" component={ProdutoDetalhado} />
         <Route exact path="/" component={Home} />
-        <Route exact path="/cads" component={ShoppingCart} />
       </Switch>
     </Router>
   );
