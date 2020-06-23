@@ -16,6 +16,13 @@ export default class ProdutoDetalhado extends Component {
         >
           Adicionar ao carrinho
         </Link>
+        <form>
+          <label htmlFor="oi" id="oi">
+            Avaliação
+          </label>
+          <br />
+          <textarea data-testid="product-detail-evaluation" rows="5" cols="40" />
+        </form>
       </div>
     );
   }
