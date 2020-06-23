@@ -8,8 +8,9 @@ export default class Produtos extends Component {
       <div style={{ border: '1px solid black', borderRadius: '5px' }}>
         {itens.map((item) =>
           <Produto
-            key={item.id} titulo={item.title}
+            key={item.id} id={item.id} titulo={item.title}
             foto={item.thumbnail} preco={`R$ ${item.price}`}
+            quantidadeEstoque={item.available_quantity}
           />,
         )}
       </div>
