@@ -14,7 +14,7 @@ export default class Produto extends Component {
           data-testid="product-detail-link"
         >
           Detalhes
-        </Link>
+        </Link><br />
         <Link
           to={{ pathname: '/carrinho_datalhado', state: { id, titulo, quantidadeEstoque } }}
           data-testid="product-add-to-cart"
