@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default class Produto extends Component {
   render() {
-    const { titulo, foto, preco } = this.props;
+    const { id, titulo, foto, preco, quantidadeEstoque } = this.props;
     return (
       <div style={{ border: '1px solid black', borderRadius: '5px' }} data-testid="product">
         <p>{titulo}</p>
@@ -14,6 +14,12 @@ export default class Produto extends Component {
           data-testid="product-detail-link"
         >
           Detalhes
+        </Link>
+        <Link
+          to={{ pathname: '/carrinho_datalhado', state: { id, titulo, quantidadeEstoque } }}
+          data-testid="product-add-to-cart"
+        >
+          Adicionar ao carrinho
         </Link>
       </div>
     );
